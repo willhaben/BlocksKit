@@ -11,7 +11,7 @@
 
 @implementation A2DynamicUIPopoverPresentationControllerDelegate
 
-- (BOOL)popoverControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
 	BOOL should = YES;
 	
@@ -25,7 +25,7 @@
 	return should;
 }
 
-- (void)popoverControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController
 {
 	id realDelegate = self.realDelegate;
 	if (realDelegate && [realDelegate respondsToSelector:@selector(popoverPresentationControllerDidDismissPopover:)])
@@ -35,8 +35,8 @@
 	if (block) block(popoverPresentationController);
 }
 
-- (void)popoverPresentationController:(UIPopoverPresentationController *)popoverPresentationController willRepositionPopoverToRect:(inout CGRect *)rect inView:(inout UIView **)view {
-	
+- (void)popoverPresentationController:(UIPopoverPresentationController *)popoverPresentationController willRepositionPopoverToRect:(inout CGRect *)rect inView:(inout UIView **)view
+{
 	id realDelegate = self.realDelegate;
 	if (realDelegate && [realDelegate respondsToSelector:@selector(popoverPresentationController:willRepositionPopoverToRect:inView:)])
 		[realDelegate popoverPresentationController:popoverPresentationController willRepositionPopoverToRect:rect inView:view];
